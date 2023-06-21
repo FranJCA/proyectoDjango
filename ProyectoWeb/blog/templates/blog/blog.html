@@ -1,0 +1,66 @@
+
+    {%extends "proyectoWebAPP/base.html"%}
+{%load static%}
+
+{%block content%}
+    {%for post in post %}
+    <div><p>
+        <section class="page-section clearfix">
+            <div class="container">
+              <div class="intro">
+                <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{post.imagen.url}}"  alt="" style="width: 50%">
+                <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+                  <h2 class="section-heading mb-4" >
+                    <span class="section-heading-lower">{{post.titulo}}</span>
+                    <span class="section-heading-upper">{{post.contenido}}</span>
+
+                  </h2>
+
+                  {% comment %} <p class="mb-3">En la puertra de tu casa en menos de 48 h con el envío normal. En menos de 24 h con el envío express.
+                  </p> {% endcomment %}
+                  <p class="mb-3">texto de prueba.
+                  </p>
+                  <div style="text-align:left;"><h2>{{post.autor}} </h2></div>
+                </div>
+              </div>
+            </div>
+          </section>
+        {% comment %} <h2 style="color: white;">{{servicios.titulo}}</h2>
+
+        <p style="color: white;">{{servicios.contenido}}</p>
+
+        <p><img src="{{servicios.imagen.url}}"></p> {% endcomment %}
+
+    </p></div>
+    {%endfor%}
+    {% comment %} aqui debe ir el codigo que permite seleccionar los post por titulo, lo debe llamar y debe hacerlo recorrer denuevo {% endcomment %}
+    <div style="width:75%; margin: auto; text-align:center; color: white;">
+    Categorias:
+    {%for post in post %}
+      {%for categoria in post.categorias.all %}
+
+
+        <a href="{% url 'categoria' categoria.id %}" class="linksCategorias">{{categoria.nombre}}</a> &nbsp;&nbsp;&nbsp;
+
+      {%endfor%}
+    {%endfor%}
+  </div>
+
+{% comment %}   
+   <a href=""" class="linksCategorias" > sdasdasdasdasdasdasdasdsadadasda </a>
+
+   <p class="linksCategorias" > sdasdasdasdasdasdasdasdsadadasda </p> {% endcomment %}
+
+   {% comment %} <style>
+    .linksCategorias{
+
+      color: white !important;
+      text-decoration: underline;
+
+      }
+  </style> {% endcomment %}
+
+
+{%endblock%}
+
+

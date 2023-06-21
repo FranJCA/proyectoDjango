@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../../../git/proyecto1"
+		},
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../Cine"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Cine"
+	}
+}

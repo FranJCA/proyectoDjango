@@ -1,0 +1,34 @@
+{%extends "proyectoWebAPP/base.html"%}
+{%load static%}
+{%load crispy_forms_tags%}
+{% comment %} 
+salio mal apartir de aquihttps://www.youtube.com/watch?v=SxtbCIRGtEo&list=PLU8oAlHdN5BmfvwxFO7HdPciOCmmYneAB&index=61 {% endcomment %}
+
+
+
+{%block content%}
+
+<form method="post" action="" style="color: white;"> 
+
+    {% csrf_token %}
+    
+    <div style="width:75%; margin:auto; "> 
+    {% comment %} {{form | crispy }} {% endcomment %}
+    {%if messages%}
+        {%for mensaje in messages   %}
+      <span class="alert alert-{{mensaje.tags}}">  {{mensaje}}</span>
+        {%endfor%}
+
+    {% endif %}
+    </br></br></br>
+
+    {{form }}
+
+    <button type="submit" class="btn btn-success">Login </button>
+
+</div>
+
+</form>
+
+{%endblock%}
+ 

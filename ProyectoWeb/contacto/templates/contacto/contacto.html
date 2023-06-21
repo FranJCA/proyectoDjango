@@ -1,0 +1,21 @@
+ 
+    {%extends "proyectoWebAPP/base.html"%}
+{%load static%}
+
+{%block content%}
+
+{% comment %} <div><p style="color:white;">{{miformulario.as_table}}</p></div> {% endcomment %}
+<div class="conenedorFormulario">
+    {% if "valido" in request.GET%}
+     <p style="color:white; margin: 20px auto;  ">su mensaje a sido enviado gracias</p>
+    {% endif%}
+    <form action="" method="POST" style="text-aling: center;">
+        {%csrf_token%}
+        <table style="color:white; margin: 20px auto;">{{miformulario.as_table}}</table>
+        <input type="submit" value="Enviar" style="width: 150px ">
+    </form>
+</div> 
+{% comment %} <p style="color:snow;">{{request.POST}}</p>   este codigo es para lo que se esta subiendo al post{% endcomment %}
+
+{%endblock%}
+ 
